@@ -3782,7 +3782,8 @@ void newlines_cleanup_braces(bool first)
       {
          prev = chunk_get_prev(pc);
 
-         if (chunk_is_token(prev, CT_PAREN_CLOSE))
+         if (  chunk_is_token(prev, CT_PAREN_CLOSE)
+            || chunk_is_token(prev, CT_FPAREN_CLOSE))         // Issue #1122
          {
             newline_iarf(chunk_get_prev_ncnlni(pc), options::nl_before_throw());   // Issue #2279
          }
