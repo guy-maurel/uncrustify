@@ -137,7 +137,6 @@ Chunk *search_for_colon(Chunk *pc_question, int depth)
       }
       pc2 = pc2->GetNextNcNnl();
    }
-
    LOG_FMT(LCOMBINE, "%s(%d): orig line is %zu, orig col is %zu, level is %zu, Text() is '?'\n",
            __func__, __LINE__, pc2->GetOrigLine(), pc2->GetOrigCol(), pc2->GetLevel());
    return(pc2);
