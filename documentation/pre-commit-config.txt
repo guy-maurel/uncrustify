@@ -1,11 +1,11 @@
-The use of pre-commit-config begins on 1. Juli 2026, with 4d44f7cce069286ed9827fc16d2c40915b9de402
+The use of pre-commit-config begins on 1. July 2026, with 4d44f7cce069286ed9827fc16d2c40915b9de402
 
 This is pretty good, but some time suggestions must be well known.
 
 The pre-commit function uses these apps:
- mdformat, debug-statements, end-of-file-fixer, trailing-whitespace, check-json, mixed-line-ending, 
- check-builtin-literals, check-ast, check-merge-conflict, check-executables-have-shebangs, 
- check-shebang-scripts-are-executable, check-docstring-first, fix-byte-order-marker, check-case-conflict, 
+ mdformat, debug-statements, end-of-file-fixer, trailing-whitespace, check-json, mixed-line-ending,
+ check-builtin-literals, check-ast, check-merge-conflict, check-executables-have-shebangs,
+ check-shebang-scripts-are-executable, check-docstring-first, fix-byte-order-marker, check-case-conflict,
  check-toml, beautysh, codespell, uncrustify, cppcheck, cpplint, shellcheck
 
 Some apps must be considered with a big attention.
@@ -17,11 +17,11 @@ It is possible to take a/some files away from the test, see the "exclude" option
 We use it as:
         exclude: ^(tests/.*|src/detect.cpp|src/indent.cpp|src/space.cpp|documentation/.*)$
 
-The time used for the files 
+The time used for the files
         src/detect.cpp
         src/indent.cpp
         src/space.cpp
-is very big. About 4 hours.( A protocoll will be completed soon)
+is very big. About 4 hours.( A protocol will be completed soon)
 
 It takes about 14 minutes for all the other files, toogether.
 
