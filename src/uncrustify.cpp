@@ -431,6 +431,7 @@ void setup_crash_handling()
 
 int main(int argc, char *argv[])
 {
+   // see also documentation/pre-commit-config.txt
    // initialize the global data
    cpd.unc_off_used = false;
 
