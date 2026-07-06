@@ -79,7 +79,7 @@ repos:
 # these files need to be extra
 #       src/detect.cpp|src/indent.cpp|src/space.cpp
 #
-        files: detect.cpp
+        files: detect.h
         #exclude: ^(tests/.*|documentation/.*)$
         #exclude: ^(tests/.*|src/detect.cpp|src/indent.cpp|src/space.cpp|documentation/.*)$
         exclude: ^(tests/.*|src/indent.cpp|src/space.cpp|documentation/.*)$

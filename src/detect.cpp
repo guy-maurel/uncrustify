@@ -151,9 +151,9 @@ static void detect_space_options()
    SP_VOTE_VAR(sp_try_brace);
    SP_VOTE_VAR(sp_getset_brace);
 
-   Chunk *prev = Chunk::GetHead();
-   Chunk *pc   = prev->GetNext();
-   Chunk *next;
+   Chunk const *prev = Chunk::GetHead();
+   Chunk       *pc   = prev->GetNext();
+   Chunk       *next;
 
    while (pc->IsNotNullChunk())
    {
