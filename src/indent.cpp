@@ -459,7 +459,6 @@ static Chunk *oc_msg_block_indent(Chunk *pc, bool from_brace,
    }
    // Check for caret in ':^TYPE *(ARGS) {'
    // Store the caret position
-   Chunk *caret_tmp = Chunk::NullChunkPtr;
 
    if (  tmp->IsNotNullChunk()
       && tmp->GetType() == E_Token::CT_OC_BLOCK_CARET)
@@ -468,8 +467,8 @@ static Chunk *oc_msg_block_indent(Chunk *pc, bool from_brace,
    }
    else
    {
-      caret_tmp = tmp->GetPrevType(E_Token::CT_OC_BLOCK_CARET);
-      tmp       = caret_tmp;
+      Chunk *caret_tmp = tmp->GetPrevType(E_Token::CT_OC_BLOCK_CARET);
+      tmp = caret_tmp;
    }
 
    // If we still cannot find caret then return first chunk on the line
@@ -1216,8 +1215,8 @@ void indent_text()
                && pc->GetParentType() == E_Token::CT_OC_AT
                && frm.top().GetOpenLevel() >= pc->GetLevel())
             {
-               size_t count = 1;
-               Chunk  *next = pc->GetNextNc();
+               size_t      count = 1;
+               Chunk const *next = pc->GetNextNc();
 
                while (  next->IsNotNullChunk()
                      && (  (  next->Is(E_Token::CT_BRACE_CLOSE)
@@ -1483,8 +1482,8 @@ void indent_text()
             if (  frm.top().GetOpenToken() == E_Token::CT_BRACE_OPEN
                && frm.top().GetOpenLevel() >= pc->GetLevel())
             {
-               size_t count = 1;
-               Chunk  *next = pc->GetNextNc();
+               size_t      count = 1;
+               Chunk const *next = pc->GetNextNc();
 
                while (  next->IsNotNullChunk()
                      && (  (  next->Is(E_Token::CT_BRACE_CLOSE)
@@ -2615,7 +2614,7 @@ void indent_text()
 
             if (options::indent_bool_nested_all())
             {
-               Chunk *prev = open_paren->GetPrevNcNnl();
+               Chunk const *prev = open_paren->GetPrevNcNnl();
 
                // open paren is preceded by a bool and that is preceded or followed by a new line
                if (prev->Is(E_Token::CT_BOOL) && (prev->GetPrevNc()->IsNewline() || prev->GetNextNc()->IsNewline()))
