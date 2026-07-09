@@ -79,10 +79,10 @@ repos:
 # these files need to be extra
 #       src/detect.cpp|src/indent.cpp|src/space.cpp
 #
-        files: detect.cpp
+        files: indent.cpp
         #exclude: ^(tests/.*|documentation/.*)$
         #exclude: ^(tests/.*|src/detect.cpp|src/indent.cpp|src/space.cpp|documentation/.*)$
-        exclude: ^(tests/.*|src/indent.cpp|src/space.cpp|documentation/.*)$
+        exclude: ^(tests/.*|src/detect.cpp|src/space.cpp|documentation/.*)$
         args:
           - --quiet
           - --force
