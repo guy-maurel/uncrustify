@@ -78,11 +78,13 @@ repos:
 # a run of cppcheck with all the files will be too long
 # these files need to be extra
 #       src/detect.cpp|src/indent.cpp|src/space.cpp
+#       detect:  18 Minuten
+#       indent: 115 Minuten
+#       space:    4 Minuten
 #
-        files: indent.cpp
-        #exclude: ^(tests/.*|documentation/.*)$
+        #files: indent.cpp
         #exclude: ^(tests/.*|src/detect.cpp|src/indent.cpp|src/space.cpp|documentation/.*)$
-        exclude: ^(tests/.*|src/detect.cpp|src/space.cpp|documentation/.*)$
+        exclude: ^(tests/.*|documentation/.*)$
         args:
           - --quiet
           - --force
