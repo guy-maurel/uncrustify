@@ -83,8 +83,10 @@ repos:
 #       space:    4 Minuten
 #
         #files: indent.cpp
-        #exclude: ^(tests/.*|src/detect.cpp|src/indent.cpp|src/space.cpp|documentation/.*)$
+# to make the big all test, do not exclude the three cpp-files
         exclude: ^(tests/.*|documentation/.*)$
+# to make the little test, exclude the three cpp-files
+        exclude: ^(tests/.*|src/detect.cpp|src/indent.cpp|src/space.cpp|documentation/.*)$
         args:
           - --quiet
           - --force
