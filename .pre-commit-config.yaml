@@ -126,7 +126,7 @@ repos:
           - --suppress=unusedStructMember
           - --suppress=useInitializationList
           - --suppress=useStlAlgorithm
-          - --suppress=variableScope          ## The scope of the variable 'xxx' can be reduced.
+          ##- --suppress=variableScope          ## The scope of the variable 'xxx' can be reduced.
 
   - repo: https://github.com/cpplint/cpplint
     rev: "2.0.2"
