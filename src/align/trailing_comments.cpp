@@ -143,7 +143,7 @@ Chunk *align_trailing_comments(Chunk *start)
             }
             align_add(cs, pc, min_col); // (intended_col < col));
             nl_count    = 0;
-            skip_budget = skip_cfg;  // Reset budget after adding
+            skip_budget = skip_cfg;     // Reset budget after adding
          }
       }
       else if (pc->TestFlags(PCF_RIGHT_COMMENT_CONT))

@@ -68,29 +68,19 @@ void print_universal_indent_cfg(FILE *pfile)
    size_t     idx;
 
 #if defined (DEBUG) && !defined (WIN32)
-   vector<size_t> allGroups;
-   allGroups.reserve(16);
-   // first run to get the first option number of each group/category
-   size_t optionNumber         = 0;
-   bool   firstOptionNumberSet = false;
+   vector<size_t> allGroups(groups.size());
+   size_t         optionNumber = 0;
 
    for (idx = 0; idx < groups.size(); ++idx)
    {
       const auto *p_grp = groups[idx];
+      allGroups[idx] = optionNumber;
 
       for (auto *const option : p_grp->options)
       {
          UNUSED(option);
-
-         if (!firstOptionNumberSet)
-         {
-            allGroups[idx]       = optionNumber;
-            firstOptionNumberSet = true;
-         }
          optionNumber++;
       } // for (auto *const option : p_grp->options)
-
-      firstOptionNumberSet = false;
    } // end of first run
 
 //#else
